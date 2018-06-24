@@ -1,0 +1,48 @@
+% !TEX TS-program = make | txs:///view
+% !TEX encoding = UTF-8
+
+\documentclass{article}
+
+\usepackage[paperwidth=9mm,  paperheight=12mm, vmargin={0.3mm,0.3mm}, hmargin=0.3mm]{geometry}
+%\usepackage{color}
+
+\usepackage{fontspec} \setmainfont{Consolas}
+\usepackage{calc}
+\usepackage{array}
+\usepackage{textcomp}
+
+
+\def\labelText{9/16}
+
+\def\humanReadableFontSize{4}
+
+\newcommand{\humanReadableFont}{\fontsize{\humanReadableFontSize}{\humanReadableFontSize}\fontspec{Consolas Bold}}
+
+\newcommand{\independentLayer}[1]
+{%
+   \hbox to 0pt
+  {%
+  	\vbox to \vsize {#1}	
+  	\hss
+  }\relax%
+}
+
+\newcommand{\hSpacer}[1]
+{%
+   \hbox to {#1} {\vbox to 0pt \hss}\relax%
+}
+
+
+\begin{document}
+	\message{vsize: \the\vsize}
+	\vbox to \vsize {
+		\vfil
+		\noindent\hskip0.025in\humanReadableFont {\the\vsize}
+		\vfil
+	}
+	\clearpage
+	\vfil
+	\noindent\hskip0.025in\humanReadableFont {aabb}
+	\vfil
+	
+\end{document}
