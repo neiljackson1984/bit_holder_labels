@@ -1,6 +1,6 @@
 <?php
 
-$ghostscriptExecutable="gswin64";
+$ghostscriptExecutable="gswin64c"; //Whereas "gswin64.exe" is ghostscript with GUI (so it pops up a window), "gswin64c.exe" is designed to be run from the command line, so does not create a window.
 $ghostviewExecutable="gsview64";
 
 $options = 
@@ -57,13 +57,14 @@ $mergedPdfFile = $inputPdfFile;
 $mergedPsFile = $tempDirectory . DIRECTORY_SEPARATOR  . $uniqueRootName . ".ps";
 $tiledPsFile = $tempDirectory . DIRECTORY_SEPARATOR  . $uniqueRootName . "-tiled.ps";
 $tempShellScriptFile = $tempDirectory . DIRECTORY_SEPARATOR  . $uniqueRootName . "-shellscript.sh";
+$temporaryTiledPdfFile = $tempDirectory . DIRECTORY_SEPARATOR  . $uniqueRootName . "-tiled.pdf";
 
 	
 //we assume that all pages in the input pdf file are the same size, so we will only bother to look at the page size of the first page.
 
 //use pdfinfo (part of xpdf toolkit) to get the page size of the input pdf file.
 //echo "inputPdfFile: " . $inputPdfFile . "\n";
-//echo "outputPdfFile: " . $outputPdfFile . "\n";
+//echo "temporaryTiledPdfFile: " . $temporaryTiledPdfFile . "\n";
 $command = "pdfinfo -box -f 1 -l -1 " . "\"" . $inputPdfFile . "\"";
 //echo "command: " . $command . "\n";
 $pdfinfoReport = shell_exec($command);
@@ -191,7 +192,7 @@ $command =
 	"-dSAFER"                                           ." ".
 	"-dNOPAUSE"                                         ." ".
 	"-dBATCH"                                           ." ".
-	"-sOutputFile=" . "\"".$outputPdfFile."\""          ." ".
+	"-sOutputFile=" . "\"".$temporaryTiledPdfFile."\""          ." ".
 	"-sDEVICE=pdfwrite"                                 ." ".
 	"-c .setpdfwrite"                                   ." ".
 	"-f" . "\"".$tiledPsFile."\""                       ." ".
@@ -200,8 +201,8 @@ $command =
 exec($command);
 
 
-
-
+//copy $temporaryTiledPdfFile to $outputPdfFile
+copy($temporaryTiledPdfFile, $outputPdfFile);
 echo "Cleaning up temp files..." . "\n";
 rrmdir($tempDirectory);
 

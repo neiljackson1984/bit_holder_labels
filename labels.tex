@@ -3,27 +3,34 @@
 
 \documentclass{article}
 
-\usepackage[paperwidth=9mm,  paperheight=12mm, vmargin={0.3mm,0.3mm}, hmargin=0.3mm]{geometry}
+\usepackage[paperwidth=9mm, paperheight=12mm, vmargin={0.3mm,2mm}, hmargin=0.3mm]{geometry}
 %\usepackage{color}
 
 \usepackage{fontspec} \setmainfont{Consolas}
 \usepackage{calc}
 \usepackage{array}
 \usepackage{textcomp}
+\usepackage[nice]{nicefrac}
+\usepackage{units}
+\usepackage{amsmath}
+\usepackage{xfrac}
+% \usepackage[parfill]{parskip} % begin paragraphs with an empty line rather than an indent
 
+\def\fractionFontSize{12.5}
+\def\primaryUnitFontSize{5}
+\def\secondaryUnitFontSize{5}
+\def\preferredFontName{Verdana}
 
-\def\labelText{9/16}
-
-\def\humanReadableFontSize{4}
-
-\newcommand{\humanReadableFont}{\fontsize{\humanReadableFontSize}{\humanReadableFontSize}\fontspec{Consolas Bold}}
+\newcommand{\fractionFont}{\fontsize{\fractionFontSize}{\fractionFontSize}\fontspec{\preferredFontName}}
+\newcommand{\primaryUnitFont}{\fontsize{\primaryUnitFontSize}{\primaryUnitFontSize}\fontspec{\preferredFontName}}
+\newcommand{\secondaryUnitFont}{\fontsize{\secondaryUnitFontSize}{\secondaryUnitFontSize}\fontspec{\preferredFontName}}
 
 \newcommand{\independentLayer}[1]
 {%
-   \hbox to 0pt
-  {%
-  	\vbox to \vsize {#1}	
-  	\hss
+   \hbox to 0pt%
+  {% 
+  	\vbox to \vsize {#1}%	
+  	\hss%
   }\relax%
 }
 
@@ -31,18 +38,54 @@
 {%
    \hbox to {#1} {\vbox to 0pt \hss}\relax%
 }
+\newcommand{\imperialFrac}[3]
+{%
+	%\vbox{%
+		\hbox{\vbox to 10pt {\vfil{\fractionFont\sfrac{#1}{#2}}\vfil}}% %the effect of this mumbo-jumbo is that tex will regard the fractions as having a height of exactly the specified height%
+		\vspace{0.35mm}%
+		\primaryUnitFont{}%
+		\hbox to \hsize {\hfil{#3}\hfil}%
+	%}
+}
+
+\newcommand{\page}[1]
+{%
+	\clearpage%
+	\independentLayer{#1}%
+	\clearpage%
+}
+
+\newcommand{\bitLabel}[4]
+{%
+	\page{%
+		%\vfil%
+		\begin{center}%
+		{\imperialFrac{#1}{#2}{#3}}
+		\vfil
+		{\secondaryUnitFont{}#4}
+		\end{center}
+		
+	}%
+}
 
 
 \begin{document}
-	\message{vsize: \the\vsize}
-	\vbox to \vsize {
-		\vfil
-		\noindent\hskip0.025in\humanReadableFont {\the\vsize}
-		\vfil
-	}
-	\clearpage
-	\vfil
-	\noindent\hskip0.025in\humanReadableFont {aabb}
-	\vfil
-	
+	% \message{vsize: \the\vsize}
+	\bitLabel{1}{16}{inch}{1.59mm}
+	\bitLabel{5}{64}{inch}{1.98mm}
+	\bitLabel{3}{32}{inch}{2.38mm}
+	\bitLabel{7}{64}{inch}{2.78mm}
+	\bitLabel{1}{8}{inch}{3.18mm}
+	\bitLabel{9}{64}{inch}{3.57mm}
+	\bitLabel{5}{32}{inch}{3.97mm}
+	\bitLabel{11}{64}{inch}{4.37mm}
+	\bitLabel{3}{16}{inch}{4.76mm}
+	\bitLabel{13}{64}{inch}{5.16mm}
+	\bitLabel{7}{32}{inch}{5.56mm}
+	\bitLabel{15}{64}{inch}{5.95mm}
+	\bitLabel{1}{4}{inch}{6.35mm}
+	\bitLabel{5}{16}{inch}{7.94mm}
+	\bitLabel{3}{8}{inch}{9.52mm}
+	\bitLabel{7}{16}{inch}{11.11mm}
+	\bitLabel{1}{2}{inch}{12.70mm}
 \end{document}
