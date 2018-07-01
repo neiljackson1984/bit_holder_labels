@@ -9,11 +9,6 @@ allOutputPdfFiles=$(foreach texFile,$(wildcard ./*.tex), ${buildDirectory}/$(bas
 
 # default:${texOutputFile}
 
-# ${viewableOutputFile}:${tiledOutputFile} 
-	# cp "${tiledOutputFile}" "${viewableOutputFile}"
-
-# default: $foreach(texFile, $(wildcard ./*.tex), $buildDirectory/$(basename $(notdir $texFile)).pdf)
-
 default: ${allOutputPdfFiles} ${tiledOutputFile}
 
 ${tiledOutputFile}: ${texOutputFile} tile.php makefile

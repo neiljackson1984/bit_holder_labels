@@ -1,9 +1,10 @@
-% !TEX TS-program = make | txs:///view
+% !TEX TS-program = make "build/?m).pdf" | txs:///view-pdf "?a)build/?m).pdf"
+% make | txs:///view-pdf "?a)build/?m)-tiled.pdf"
 % !TEX encoding = UTF-8
 
 \documentclass{article}
 
-\usepackage[paperwidth=9mm, paperheight=12mm, vmargin={0.3mm,2mm}, hmargin=0.3mm]{geometry}
+\usepackage[paperwidth=9mm, paperheight=12mm, vmargin={0.3mm,0.3mm}, hmargin=0.3mm]{geometry}
 %\usepackage{color}
 
 \usepackage{fontspec} \setmainfont{Consolas}
@@ -15,17 +16,17 @@
 \usepackage{amsmath}
 \usepackage{xfrac}
 % \usepackage[parfill]{parskip} % begin paragraphs with an empty line rather than an indent
-
+ 
 \def\fractionFontSize{12.5}
 \def\primaryUnitFontSize{5}
-\def\secondaryUnitFontSize{5}
+\def\secondaryUnitFontSize{4}
 \def\preferredFontName{Verdana}
 
 \newcommand{\fractionFont}{\fontsize{\fractionFontSize}{\fractionFontSize}\fontspec{\preferredFontName}}
 \newcommand{\primaryUnitFont}{\fontsize{\primaryUnitFontSize}{\primaryUnitFontSize}\fontspec{\preferredFontName}}
 \newcommand{\secondaryUnitFont}{\fontsize{\secondaryUnitFontSize}{\secondaryUnitFontSize}\fontspec{\preferredFontName}}
 
-\newcommand{\independentLayer}[1]
+\newcommand{\independentLayer}[1]%
 {%
    \hbox to 0pt%
   {% 
@@ -34,37 +35,35 @@
   }\relax%
 }
 
-\newcommand{\hSpacer}[1]
+\newcommand{\hSpacer}[1]%
 {%
    \hbox to {#1} {\vbox to 0pt \hss}\relax%
 }
-\newcommand{\imperialFrac}[3]
+\newcommand{\imperialFrac}[3]%
 {%
-	%\vbox{%
-		\hbox{\vbox to 10pt {\vfil{\fractionFont\sfrac{#1}{#2}}\vfil}}% %the effect of this mumbo-jumbo is that tex will regard the fractions as having a height of exactly the specified height%
-		\vspace{0.35mm}%
-		\primaryUnitFont{}%
-		\hbox to \hsize {\hfil{#3}\hfil}%
+    %\vbox{%
+        \hbox to \hsize{\vbox to 0.2mm {\noindent\fractionFont\sfrac{#1}{#2}}\hss}\relax% %the effect of this mumbo-jumbo is that tex will regard the fractions as having a height of exactly the specified height%
+		%\vspace{0.35mm}%
+        \primaryUnitFont%
+        \hbox to \hsize {{#3}}%
 	%}
 }
 
-\newcommand{\page}[1]
+\newcommand{\page}[1]%
 {%
 	\clearpage%
 	\independentLayer{#1}%
 	\clearpage%
 }
 
-\newcommand{\bitLabel}[4]
+\newcommand{\bitLabel}[4]%
 {%
 	\page{%
 		%\vfil%
-		\begin{center}%
+		%\begin{center}%
 		{\imperialFrac{#1}{#2}{#3}}
-		\vfil
-		{\secondaryUnitFont{}#4}
-		\end{center}
-		
+        {\noindent\secondaryUnitFont({#4})}%
+		%\end{center}%
 	}%
 }
 
@@ -72,20 +71,20 @@
 \begin{document}
 	% \message{vsize: \the\vsize}
 	\bitLabel{1}{16}{inch}{1.59mm}
-	\bitLabel{5}{64}{inch}{1.98mm}
-	\bitLabel{3}{32}{inch}{2.38mm}
-	\bitLabel{7}{64}{inch}{2.78mm}
-	\bitLabel{1}{8}{inch}{3.18mm}
-	\bitLabel{9}{64}{inch}{3.57mm}
-	\bitLabel{5}{32}{inch}{3.97mm}
-	\bitLabel{11}{64}{inch}{4.37mm}
-	\bitLabel{3}{16}{inch}{4.76mm}
-	\bitLabel{13}{64}{inch}{5.16mm}
-	\bitLabel{7}{32}{inch}{5.56mm}
-	\bitLabel{15}{64}{inch}{5.95mm}
-	\bitLabel{1}{4}{inch}{6.35mm}
-	\bitLabel{5}{16}{inch}{7.94mm}
-	\bitLabel{3}{8}{inch}{9.52mm}
-	\bitLabel{7}{16}{inch}{11.11mm}
-	\bitLabel{1}{2}{inch}{12.70mm}
+	%\bitLabel{5}{64}{inch}{1.98mm}
+	%\bitLabel{3}{32}{inch}{2.38mm}
+	%\bitLabel{7}{64}{inch}{2.78mm}
+	%\bitLabel{1}{8}{inch}{3.18mm}
+	%\bitLabel{9}{64}{inch}{3.57mm}
+	%\bitLabel{5}{32}{inch}{3.97mm}
+	%\bitLabel{11}{64}{inch}{4.37mm}
+	%\bitLabel{3}{16}{inch}{4.76mm}
+	%\bitLabel{13}{64}{inch}{5.16mm}
+	%\bitLabel{7}{32}{inch}{5.56mm}
+	%\bitLabel{15}{64}{inch}{5.95mm}
+	%\bitLabel{1}{4}{inch}{6.35mm}
+	%\bitLabel{5}{16}{inch}{7.94mm}
+	%\bitLabel{3}{8}{inch}{9.52mm}
+	%\bitLabel{7}{16}{inch}{11.11mm}
+	%\bitLabel{1}{2}{inch}{12.70mm}
 \end{document}

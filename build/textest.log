@@ -1,29 +1,5 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6630 64-bit) (preloaded format=xetex 2018.6.23)  29 JUN 2018 14:07
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6630 64-bit) (preloaded format=xetex 2018.6.23)  30 JUN 2018 17:38
 entering extended mode
 **./textest.tex
-(textest.tex
-Overfull \hbox (0.98807pt too wide) in paragraph at lines 9--13
-\tenrm tant galaxy called []O^^?o^^Xc, there lived|
-
-\hbox(9.20636+1.94444)x144.54, glue set - 1.0
-.\tenrm t
-.\tenrm a
-.\tenrm n
-.\kern-0.27779
-.\tenrm t
-.etc.
-
-
-Overfull \hbox (5.32132pt too wide) in paragraph at lines 19--23
-\tenrm he pref-erred to be called---was hap-|
-
-\hbox(6.94444+1.94444)x144.54, glue set - 1.0
-.\tenrm h
-.\tenrm e
-.\glue 3.33333 plus 1.66666 minus 1.11111
-.\tenrm p
-.\tenrm r
-.etc.
-
-[1] )
-Output written on textest.pdf (1 page).
+(textest.tex [1] )
+Output written on U:\2018-06-23 bit holder labels\build\textest.pdf (1 page).
