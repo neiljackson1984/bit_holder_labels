@@ -1,0 +1,19 @@
+\def\independentLayer#1%
+{%
+    \hbox to 0pt%
+    {% 
+        \vbox to \vsize {#1}%	
+        \hss%
+    }\relax%
+}
+
+
+\independentLayer{%
+    %\vfil%
+    %\begin{center}%
+    \hbox to 0pt {%
+        \vbox{\vbox{\noindent ax\relax}\vbox{\noindent f}}bgc%
+    }%
+    \hbox{\hfil({123})\hfil}%
+    %\end{center}%
+}%

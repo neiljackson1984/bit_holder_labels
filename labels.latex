@@ -4,7 +4,7 @@
 
 \documentclass{article}
 
-\usepackage[paperwidth=9mm, paperheight=12mm, vmargin={0.3mm,0.3mm}, hmargin=0.3mm]{geometry}
+\usepackage[paperwidth=25mm, paperheight=12mm, vmargin={0.3mm,0.3mm}, hmargin=0.3mm]{geometry}
 %\usepackage{color}
 
 \usepackage{fontspec} \setmainfont{Consolas}
@@ -35,18 +35,29 @@
   }\relax%
 }
 
+% \newcommand{\independentLayer}[1]%
+% {%
+   % \hbox to 0pt%
+  % {% 
+  	% \vbox to \vsize {%
+        % \hbox{a}\hbox{b} \vfil\hbox{c}   
+    % }%	
+  	% \hss%
+  % }\relax%
+% }
+
+
 \newcommand{\hSpacer}[1]%
 {%
    \hbox to {#1} {\vbox to 0pt \hss}\relax%
 }
 \newcommand{\imperialFrac}[3]%
 {%
-    %\vbox{%
-        \hbox to \hsize{\vbox to 0.2mm {\noindent\fractionFont\sfrac{#1}{#2}}\hss}\relax% %the effect of this mumbo-jumbo is that tex will regard the fractions as having a height of exactly the specified height%
-		%\vspace{0.35mm}%
-        \primaryUnitFont%
-        \hbox to \hsize {{#3}}%
-	%}
+    \vbox{%
+       %\hbox to \hsize{\vbox to 0.2mm {\noindent\fractionFont{}na}\hss}\relax% %the effect of this mumbo-jumbo is that tex will regard the fractions as having a height of exactly the specified height%
+       \hbox to \hsize {\hfil{\fractionFont\sfrac{#1}{#2}}\hfil}% %the effect of this mumbo-jumbo is that tex will regard the fractions as having a height of exactly the specified height%
+       \hbox to \hsize{\hfil{\primaryUnitFont{#3}}\hfil}%
+	}%
 }
 
 \newcommand{\page}[1]%
@@ -61,16 +72,19 @@
 	\page{%
 		%\vfil%
 		%\begin{center}%
-		{\imperialFrac{#1}{#2}{#3}}
-        {\noindent\secondaryUnitFont({#4})}%
+		\hbox to \hsize {%
+            \vbox{\vbox{\noindent a\relax}\vbox{\noindent f\relax}}bc%
+        }%
+        \hbox{\secondaryUnitFont\hfil({#4})\hfil}%
 		%\end{center}%
 	}%
 }
 
 
-\begin{document}
+\begin{document}%
+    \input  includeme.tex
 	% \message{vsize: \the\vsize}
-	\bitLabel{1}{16}{inch}{1.59mm}
+	%\bitLabel{1}{16}{inch}{1.59mm}%
 	%\bitLabel{5}{64}{inch}{1.98mm}
 	%\bitLabel{3}{32}{inch}{2.38mm}
 	%\bitLabel{7}{64}{inch}{2.78mm}
