@@ -10,17 +10,23 @@ tiledOutputFile=$(basename ${texOutputFile})-tiled.pdf
 texFileExtensions=tex latex plaintex
 allTexFiles=$(foreach texFileExtension, ${texFileExtensions}, $(wildcard ./*.${texFileExtension}))
 allOutputPdfFiles=$(foreach texFile,${allTexFiles}, ${buildDirectory}/$(basename $(notdir ${texFile})).pdf)
-latexRecipe=miktex-xetex --quiet --undump=xelatex --interaction=nonstopmode --aux-directory="$(shell cygpath --windows $(abspath ${buildDirectory}))" --output-directory="$(shell cygpath --windows $(abspath $(dir ${@})))" --job-name="$(basename $(notdir ${@}))" "$(shell cygpath --windows $(abspath ${<}))"
-plainTexRecipe=xetex.exe -synctex=1 -interaction=nonstopmode --aux-directory="$(shell cygpath --windows $(abspath ${buildDirectory}))" --output-directory="$(shell cygpath --windows $(abspath $(dir ${@})))" "$(shell cygpath --windows $(abspath ${<}))"
+
+# latexRecipe=miktex-xetex --quiet --undump=xelatex --interaction=nonstopmode --aux-directory="$(shell cygpath --windows $(abspath ${buildDirectory}))" --output-directory="$(shell cygpath --windows $(abspath $(dir ${@})))" --job-name="$(basename $(notdir ${@}))" "$(shell cygpath --windows $(abspath ${<}))"
+# plainTexRecipe=xetex.exe -synctex=1 -interaction=nonstopmode --aux-directory="$(shell cygpath --windows $(abspath ${buildDirectory}))" --output-directory="$(shell cygpath --windows $(abspath $(dir ${@})))" "$(shell cygpath --windows $(abspath ${<}))"
+
+latexRecipe=-miktex-xetex --quiet --undump=xelatex --interaction=nonstopmode --aux-directory="$(shell cygpath --windows $(abspath ${buildDirectory}))" --output-directory="$(shell cygpath --windows $(abspath $(dir ${@})))" --job-name="$(basename $(notdir ${@}))" "$(shell cygpath --windows $(abspath ${<}))"
+plainTexRecipe=-xetex.exe -synctex=1 -interaction=nonstopmode --aux-directory="$(shell cygpath --windows $(abspath ${buildDirectory}))" --output-directory="$(shell cygpath --windows $(abspath $(dir ${@})))" "$(shell cygpath --windows $(abspath ${<}))"
 
 
-#default: ${allOutputPdfFiles} ${tiledOutputFile}
-default: ${allOutputPdfFiles}
+default: ${allOutputPdfFiles} ${tiledOutputFile}
+#default: ${allOutputPdfFiles}
 
 #the following two line is just for experimenting with the vboxes and hboxes.
 ${buildDirectory}/labels.pdf ${buildDirectory}/textest.pdf: includeme.tex
+
+#the following rule will prevent includeme.tex from being compiled.
 ${buildDirectory}/includeme.pdf:
-	@# do nothing
+	@#do nothing
 
 ${tiledOutputFile}: ${texOutputFile} tile.php makefile
 	php tile.php --inputPdfFile="$(shell cygpath --windows $(abspath ${texOutputFile}))" --outputPdfFile="$(shell cygpath --windows $(abspath ${tiledOutputFile}))" --outputPageWidth=8.5inch --outputPageHeight=11inch --outputPageLeftMargin=1inch --outputPageRightMargin=1inch --outputPageTopMargin=1inch --outputPageBottomMargin=1inch --dividerLineThickness=0.0004in

@@ -4,7 +4,7 @@
 
 \documentclass{article}
 
-\usepackage[paperwidth=25mm, paperheight=12mm, vmargin={0.3mm,0.3mm}, hmargin=0.3mm]{geometry}
+\usepackage[paperwidth=9mm, paperheight=12mm, vmargin={1mm,1mm}, hmargin=0.3mm]{geometry}
 %\usepackage{color}
 
 \usepackage{fontspec} \setmainfont{Consolas}
@@ -16,11 +16,50 @@
 \usepackage{amsmath}
 \usepackage{xfrac}
 % \usepackage[parfill]{parskip} % begin paragraphs with an empty line rather than an indent
- 
-\def\fractionFontSize{12.5}
-\def\primaryUnitFontSize{5}
-\def\secondaryUnitFontSize{4}
+
+\def\fractionFontSize{12.5pt}
+\def\primaryUnitFontSize{5pt}
+\def\secondaryUnitFontSize{4pt}
 \def\preferredFontName{Verdana}
+% \def\commonVerticalExtentOfFraction{} %leave it blank to specify that the natural height of thefraction be used (this can vary if there are descenders that stick below the baseline, for instance.)
+\def\commonVerticalExtentOfFraction{to 4mm}
+
+%this is mainly for diagnosing the box layout.  Set to 0 to effectively eliminate the box outlines.
+% \def\outlineThickness{0.01mm} 
+\def\outlineThickness{0pt}  %this is mainly for diagnosing the box layout.  Set to 0 to effectively eliminate the box outlines.
+
+
+\def\noAutomaticInterlineGlue{%
+    \baselineskip=0pt plus 0pt minus 0pt%
+    \lineskiplimit=100in%
+    \lineskip=0pt plus 0pt minus 0pt%
+}
+
+
+% \def\tightVbox#1#2{%
+    % \vbox to #1{%
+        % \noAutomaticInterlineGlue%
+        % {#2}%
+    % }%
+% }
+
+%parameter 1 is a box
+%this function will return a box of the same dimensions as that passed into it,
+%but will add a rectangular line around the box,
+%with the the line thickness (specified by \outlineThickness) growing inwards from the boundary of the box.
+\def\encloseInOutline#1{%
+    \hbox{%
+        \vrule width \outlineThickness\relax \hskip -\outlineThickness\relax%
+        \vbox{%
+            \hrule height \outlineThickness\relax \vskip -\outlineThickness\relax%
+            \hbox{#1}%
+            \vskip -\outlineThickness\relax\hrule height \outlineThickness\relax%
+        }%
+        \hskip -\outlineThickness\relax\vrule width \outlineThickness\relax %
+    }%
+}
+
+
 
 \newcommand{\fractionFont}{\fontsize{\fractionFontSize}{\fractionFontSize}\fontspec{\preferredFontName}}
 \newcommand{\primaryUnitFont}{\fontsize{\primaryUnitFontSize}{\primaryUnitFontSize}\fontspec{\preferredFontName}}
@@ -35,28 +74,38 @@
   }\relax%
 }
 
-% \newcommand{\independentLayer}[1]%
+% \newcommand{\hSpacer}[1]%
 % {%
-   % \hbox to 0pt%
-  % {% 
-  	% \vbox to \vsize {%
-        % \hbox{a}\hbox{b} \vfil\hbox{c}   
-    % }%	
-  	% \hss%
-  % }\relax%
+   % \hbox to {#1} {\vbox to 0pt \hss}\relax%
 % }
-
-
-\newcommand{\hSpacer}[1]%
-{%
-   \hbox to {#1} {\vbox to 0pt \hss}\relax%
-}
 \newcommand{\imperialFrac}[3]%
 {%
     \vbox{%
-       %\hbox to \hsize{\vbox to 0.2mm {\noindent\fractionFont{}na}\hss}\relax% %the effect of this mumbo-jumbo is that tex will regard the fractions as having a height of exactly the specified height%
-       \hbox to \hsize {\hfil{\fractionFont\sfrac{#1}{#2}}\hfil}% %the effect of this mumbo-jumbo is that tex will regard the fractions as having a height of exactly the specified height%
-       \hbox to \hsize{\hfil{\primaryUnitFont{#3}}\hfil}%
+        \noAutomaticInterlineGlue%
+        \encloseInOutline%
+        {%
+            \hbox to \hsize{%
+                \hfil%
+                \vbox \commonVerticalExtentOfFraction {%
+                    \vfil%
+                    \encloseInOutline%
+                    {%
+                        \hbox{\fractionFont\sfrac{\encloseInOutline{#1}}{#2}}%the effect of this mumbo-jumbo is that tex will regard the fractions as having a height of exactly the specified height%
+                    }%
+                    \vfil%
+                }%
+                \hfil%
+            }%
+        }%
+       \vskip 1pt%
+       \encloseInOutline{%
+           \hbox to \hsize{%
+               \hfil%
+               % \encloseInOutline%
+               {\primaryUnitFont{#3}}%
+               \hfil%
+            }%
+        }%
 	}%
 }
 
@@ -70,35 +119,34 @@
 \newcommand{\bitLabel}[4]%
 {%
 	\page{%
-		%\vfil%
-		%\begin{center}%
-		\hbox to \hsize {%
-            \vbox{\vbox{\noindent a\relax}\vbox{\noindent f\relax}}bc%
+        \vbox to \vsize{%
+            \noAutomaticInterlineGlue%
+            \imperialFrac{#1}{#2}{#3}%
+            \vfil%
+            \hbox to \hsize{\secondaryUnitFont\hfil({#4})\hfil}%
         }%
-        \hbox{\secondaryUnitFont\hfil({#4})\hfil}%
-		%\end{center}%
 	}%
 }
 
 
 \begin{document}%
-    \input  includeme.tex
+    %\input  includeme.tex
 	% \message{vsize: \the\vsize}
-	%\bitLabel{1}{16}{inch}{1.59mm}%
-	%\bitLabel{5}{64}{inch}{1.98mm}
-	%\bitLabel{3}{32}{inch}{2.38mm}
-	%\bitLabel{7}{64}{inch}{2.78mm}
-	%\bitLabel{1}{8}{inch}{3.18mm}
-	%\bitLabel{9}{64}{inch}{3.57mm}
-	%\bitLabel{5}{32}{inch}{3.97mm}
-	%\bitLabel{11}{64}{inch}{4.37mm}
-	%\bitLabel{3}{16}{inch}{4.76mm}
-	%\bitLabel{13}{64}{inch}{5.16mm}
-	%\bitLabel{7}{32}{inch}{5.56mm}
-	%\bitLabel{15}{64}{inch}{5.95mm}
-	%\bitLabel{1}{4}{inch}{6.35mm}
-	%\bitLabel{5}{16}{inch}{7.94mm}
-	%\bitLabel{3}{8}{inch}{9.52mm}
-	%\bitLabel{7}{16}{inch}{11.11mm}
-	%\bitLabel{1}{2}{inch}{12.70mm}
+	\bitLabel{1}{16}{inch}{1.59mm}    %
+	\bitLabel{5}{64}{inch}{1.98mm}    %
+	\bitLabel{3}{32}{inch}{2.38mm}    %
+	\bitLabel{7}{64}{inch}{2.78mm}    %
+	\bitLabel{1}{8}{inch}{3.18mm}     %
+	\bitLabel{9}{64}{inch}{3.57mm}    %
+	\bitLabel{5}{32}{inch}{3.97mm}    %
+	\bitLabel{11}{64}{inch}{4.37mm}   %
+	\bitLabel{3}{16}{inch}{4.76mm}    %
+	\bitLabel{13}{64}{inch}{5.16mm}   %
+	\bitLabel{7}{32}{inch}{5.56mm}    %
+	\bitLabel{15}{64}{inch}{5.95mm}   %
+	\bitLabel{1}{4}{inch}{6.35mm}     %
+	\bitLabel{5}{16}{inch}{7.94mm}    %
+	\bitLabel{3}{8}{inch}{9.52mm}     %
+	\bitLabel{7}{16}{inch}{11.11mm}   %
+	\bitLabel{1}{2}{inch}{12.70mm}    %
 \end{document}

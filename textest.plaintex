@@ -2,7 +2,14 @@
 
 %\magnification=\magstep3
 
-
+\def\tightVbox#1{%
+    \vbox{%
+        \baselineskip=0pt plus 0pt minus 0pt%
+        \lineskiplimit=100in%
+        \lineskip=0pt plus 0pt minus 0pt%
+        {#1}%
+    }%
+}
 
 \hsize=6.5truein
 \hrule
@@ -20,12 +27,12 @@ named R.~J. Drofnats.
 %\show{-,sp}
   
 \line{\hfil\hfill What happens now?\hfil}  
-\input  includeme.tex
+% \input  includeme.tex
 \def\centerlinea#1{\line{\hfil#1\hfil}}
 \def\centerlineb#1{\line{\hfill#1\hfill}}
 \def\centerlinec#1{\line{\hss#1\hss}}
 \bigskip
-\vbox{\hbox{a}     \hbox{b}   \hbox{c}}
+\tightVbox{\hbox{a}     \hbox{b}   \hbox{c}}
 \bigskip
 Mr.~Drofnats---or ``R. J.,'' as
 he preferred to be called---%

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6630 64-bit) (preloaded format=xelatex 2018.6.23)  1 JUL 2018 15:23
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6630 64-bit) (preloaded format=xelatex 2018.6.23)  1 JUL 2018 20:10
 entering extended mode
 **"U:/2018-06-23 bit holder labels/labels.latex"
 ("U:/2018-06-23 bit holder labels/labels.latex"
@@ -642,30 +642,30 @@ Package: xfrac 2018-05-12 L3 Experimental split-level fractions
 . 
 . Defining command \sfrac with sig. 'omom' on line 420.
 .................................................
-)
-No file labels.aux.
+) ("U:\2018-06-23 bit holder labels\build\labels.aux")
 \openout1 = `labels.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 84.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 132.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 132.
+
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    ... okay on input line 132.
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
@@ -673,15 +673,15 @@ LaTeX Font Info:    ... okay on input line 84.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(0.85358pt, 69.42473pt, 0.85358pt)
-* v-part:(T,H,B)=(0.85358pt, 32.43614pt, 0.85358pt)
-* \paperwidth=71.13188pt
+* h-part:(L,W,R)=(0.85358pt, 23.90031pt, 0.85358pt)
+* v-part:(T,H,B)=(2.84526pt, 28.45277pt, 2.84526pt)
+* \paperwidth=25.60747pt
 * \paperheight=34.1433pt
-* \textwidth=69.42473pt
-* \textheight=32.43614pt
+* \textwidth=23.90031pt
+* \textheight=28.45277pt
 * \oddsidemargin=-71.41641pt
 * \evensidemargin=-71.41641pt
-* \topmargin=-108.41641pt
+* \topmargin=-106.42473pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -706,78 +706,145 @@ LaTeX Font Info:    ... okay on input line 84.
 .................................................
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 84.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 84.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 84.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 84.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 84.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 84.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 84.
-LaTeX Font Info:    Redeclaring math accent \check on input line 84.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 84.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 84.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 84.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 84.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 84.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 84.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 84.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 84.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 84.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 84.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 84.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 84.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 84.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 84.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 84.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 84.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 132.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 132.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 132.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 132.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 132.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 132.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 132.
+LaTeX Font Info:    Redeclaring math accent \check on input line 132.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 132.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 132.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 132.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 132.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 132.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 84.
+(Font)              `operators' in the math version `normal' on input line 132.
+
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/Consolas(0)/m/n on input line 84.
+(Font)                  OT1/cmr/m/n --> TU/Consolas(0)/m/n on input line 132.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 84.
+(Font)              `operators' in the math version `bold' on input line 132.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/Consolas(0)/m/n on input line 84.
+(Font)                  OT1/cmr/bx/n --> TU/Consolas(0)/m/n on input line 132.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  TU/Consolas(0)/m/n --> TU/Consolas(0)/m/n on input line
- 84.
+ 132.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/Consolas(0)/m/it on input line 84.
+(Font)                  OT1/cmr/m/it --> TU/Consolas(0)/m/it on input line 132.
+
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/Consolas(0)/bx/n on input line 84.
+(Font)                  OT1/cmr/bx/n --> TU/Consolas(0)/bx/n on input line 132.
+
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 84.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 132.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 84.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 132.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/Consolas(0)/m/n --> TU/Consolas(0)/bx/n on input lin
-e 84.
+e 132.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/Consolas(0)/bx/it on input line 84
-.
+(Font)                  OT1/cmr/bx/it --> TU/Consolas(0)/bx/it on input line 13
+2.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 84.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 132.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 84.
-(includeme.tex
-Overfull \hbox (85.91887pt too wide) detected at line 19
-[]\TU/Consolas(0)/m/n/10 bgc
- []
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 132.
+\g__fontspec_family_Verdana_int=\count267
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Verdana(0)' created for font 'Verdana' with options [].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->"Verdana/OT:script=latn;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.:
+. <->"Verdana/OT:script=latn;language=DFLT;+smcp;"
+. - 'bold' (bx/n) with NFSS spec.:
+. <->"Verdana/B/OT:script=latn;language=DFLT;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.:
+. <->"Verdana/B/OT:script=latn;language=DFLT;+smcp;"
+. - 'italic' (m/it) with NFSS spec.:
+. <->"Verdana/I/OT:script=latn;language=DFLT;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.:
+. <->"Verdana/I/OT:script=latn;language=DFLT;+smcp;"
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->"Verdana/BI/OT:script=latn;language=DFLT;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
+. <->"Verdana/BI/OT:script=latn;language=DFLT;+smcp;"
+.................................................
+[1
 
 
-Underfull \vbox (badness 10000) detected at line 19
- []
+] [2
 
-) [1
+
+] [3
+
+
+] [4
+
+
+] [5
+
+
+] [6
+
+
+] [7
+
+
+] [8
+
+
+] [9
+
+
+] [10
+
+
+] [11
+
+
+] [12
+
+
+] [13
+
+
+] [14
+
+
+] [15
+
+
+] [16
+
+
+] [17
+
 
 ] ("U:\2018-06-23 bit holder labels\build\labels.aux") ) 
 Here is how much of TeX's memory you used:
- 13510 strings out of 427798
- 282779 string characters out of 3151797
- 366860 words of memory out of 3000000
- 17459 multiletter control sequences out of 15000+200000
- 532410 words of font info for 33 fonts, out of 3000000 for 9000
+ 13559 strings out of 427798
+ 284007 string characters out of 3151797
+ 367996 words of memory out of 3000000
+ 17490 multiletter control sequences out of 15000+200000
+ 532514 words of font info for 46 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
- 39i,5n,65p,397b,397s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,18n,75p,397b,397s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on U:\2018-06-23 bit holder labels\build\labels.pdf (1 page).
+Output written on U:\2018-06-23 bit holder labels\build\labels.pdf (17 pages).
