@@ -25,6 +25,7 @@ $outputPdfFile = get_absolute_path($options['outputPdfFile']);
 $units = [];
 $units['point']=1;
 $units['inch']=72*$units['point'];
+$units['millimeter']=((float) $units['inch'])/25.4;
 
 // echo "\$options: " . var_export($options, true) . "\n";
 
@@ -68,7 +69,7 @@ $temporaryTiledPdfFile = $tempDirectory . DIRECTORY_SEPARATOR  . $uniqueRootName
 $command = "pdfinfo -box -f 1 -l -1 " . "\"" . $inputPdfFile . "\"";
 //echo "command: " . $command . "\n";
 $pdfinfoReport = shell_exec($command);
-
+echo "\$pdfinfoReport : " . print_r($pdfinfoReport ,true) . "\n";
 // look for a line like "Page    1 size: 25.51 x 34.02 pts (rotated 0 degrees)"
 $regExForPageSizeLine = "/^page\\s*(?P<pageNumber>\\d+)\\s*size:\\s*(?P<pageWidth>[\\d\.]+)\\s*x\\s*(?P<pageHeight>[\\d\.]+)\\s*(?P<lengthUnits>\\w+)\\s*(\\(rotated\\s*(?P<rotationAngle>[\\d\.]+)\\s*(?P<angularUnits>\\w+)\\s*\\)|).*$/mi";
 preg_match_all($regExForPageSizeLine, $pdfinfoReport, $matches, PREG_SET_ORDER);
@@ -93,12 +94,14 @@ $tileExtent =
 		$tileWidth,
 		$tileHeight
 	];
+echo "\$tileExtent : " . print_r($tileExtent ,true) . "\n";
 
 $extentOfMaximumAllowableTilingArea = 
 	[
 		$outputPageWidth-$outputPageLeftMargin-$outputPageRightMargin,
 		$outputPageHeight-$outputPageTopMargin-$outputPageBottomMargin
 	];
+// echo "\$extentOfMaximumAllowableTilingArea : " . print_r($extentOfMaximumAllowableTilingArea ,true) . "\n";
 	
 $cornerOfMaximumAllowableTilingArea = 
 	[
@@ -112,6 +115,8 @@ $tileCount =
 		floor($extentOfMaximumAllowableTilingArea[1]/$tileExtent[1])
 	];
 
+// echo "\$tileCount : " . print_r($tileCount ,true) . "\n";
+
 $extentOfTilingArea = 
 	[
 		$tileCount[0] * $tileExtent[0],
@@ -123,7 +128,7 @@ $cornerOfTilingArea =
 		$cornerOfMaximumAllowableTilingArea[0] + ($extentOfMaximumAllowableTilingArea[0] - $extentOfTilingArea[0])/2,
 		$cornerOfMaximumAllowableTilingArea[1] + ($extentOfMaximumAllowableTilingArea[1] - $extentOfTilingArea[1])/2
 	];
-
+ 
 	
 $insertionPoints = [];
 for($yIndex = $tileCount[1] - 1; $yIndex >=0 ; $yIndex--)	
@@ -141,7 +146,7 @@ for($yIndex = $tileCount[1] - 1; $yIndex >=0 ; $yIndex--)
 
 
 $insertionPoints = array_slice($insertionPoints, 0, $maximumAllowableNumberOfTilesPerPage );
-
+// echo "\$insertionPoints : " . print_r($insertionPoints ,true) . "\n";
 $pagespecForPstops = "";
 $pagespecForPstops .= count($insertionPoints) . ":";
 $isFirst=true;
@@ -279,6 +284,8 @@ function getPhysicalValue($string)
 				"in" => $units['inch'],
 				"inch" => $units['inch'],
 				"inches" => $units['inch'],
+                "mm" => $units['millimeter'],
+                "millimeter" => $units['millimeter']
 			][strtolower($matches[0]['nameOfUnit'])];
 	} else
 	{

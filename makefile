@@ -29,7 +29,7 @@ ${buildDirectory}/includeme.pdf:
 	@#do nothing
 
 ${tiledOutputFile}: ${texOutputFile} tile.php makefile
-	php tile.php --inputPdfFile="$(shell cygpath --windows $(abspath ${texOutputFile}))" --outputPdfFile="$(shell cygpath --windows $(abspath ${tiledOutputFile}))" --outputPageWidth=8.5inch --outputPageHeight=11inch --outputPageLeftMargin=1inch --outputPageRightMargin=1inch --outputPageTopMargin=1inch --outputPageBottomMargin=1inch --dividerLineThickness=0.0004in
+	php tile.php --inputPdfFile="$(shell cygpath --windows $(abspath ${texOutputFile}))" --outputPdfFile="$(shell cygpath --windows $(abspath ${tiledOutputFile}))" --outputPageWidth=85mm --outputPageHeight=18mm --outputPageLeftMargin=2mm --outputPageRightMargin=2mm --outputPageTopMargin=1mm --outputPageBottomMargin=1mm --dividerLineThickness=0.0004in
 
 #the following line simply declares that any target m,atching the rule ${buildDirectory}/% depends on ${buildDirectory}
 ${buildDirectory}/%: ${buildDirectory} 

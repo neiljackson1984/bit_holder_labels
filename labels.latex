@@ -4,7 +4,7 @@
 
 \documentclass{article}
 
-\usepackage[paperwidth=9mm, paperheight=12mm, vmargin={1mm,1mm}, hmargin=0.3mm]{geometry}
+\usepackage[paperwidth=10mm, paperheight=8mm, vmargin={0.2mm,0.2mm}, hmargin=0.3mm]{geometry}
 %\usepackage{color}
 
 \usepackage{fontspec} \setmainfont{Consolas}
@@ -97,7 +97,7 @@
                 \hfil%
             }%
         }%
-       \vskip 1pt%
+       \vskip 0.2pt%
        \encloseInOutline{%
            \hbox to \hsize{%
                \hfil%
