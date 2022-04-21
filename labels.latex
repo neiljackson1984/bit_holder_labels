@@ -116,6 +116,18 @@
 	\clearpage%
 }
 
+\newcommand{\drillBitLabel}[4]%
+{%
+	\page{%
+        \vbox to \vsize{%
+            \noAutomaticInterlineGlue%
+            \imperialFrac{#1}{#2}{#3}%
+            \vfil%
+            \hbox to \hsize{\secondaryUnitFont\hfil({#4})\hfil}%
+        }%
+	}%
+}
+
 \newcommand{\bitLabel}[4]%
 {%
 	\page{%
@@ -129,24 +141,29 @@
 }
 
 
+
+
+
+
+
 \begin{document}%
     %\input  includeme.tex
 	% \message{vsize: \the\vsize}
-	\bitLabel{1}{16}{inch}{1.59mm}    %
-	\bitLabel{5}{64}{inch}{1.98mm}    %
-	\bitLabel{3}{32}{inch}{2.38mm}    %
-	\bitLabel{7}{64}{inch}{2.78mm}    %
-	\bitLabel{1}{8}{inch}{3.18mm}     %
-	\bitLabel{9}{64}{inch}{3.57mm}    %
-	\bitLabel{5}{32}{inch}{3.97mm}    %
-	\bitLabel{11}{64}{inch}{4.37mm}   %
-	\bitLabel{3}{16}{inch}{4.76mm}    %
-	\bitLabel{13}{64}{inch}{5.16mm}   %
-	\bitLabel{7}{32}{inch}{5.56mm}    %
-	\bitLabel{15}{64}{inch}{5.95mm}   %
-	\bitLabel{1}{4}{inch}{6.35mm}     %
-	\bitLabel{5}{16}{inch}{7.94mm}    %
-	\bitLabel{3}{8}{inch}{9.52mm}     %
-	\bitLabel{7}{16}{inch}{11.11mm}   %
-	\bitLabel{1}{2}{inch}{12.70mm}    %
+	\drillBitLabel{1}{16}{inch}{1.59mm}    %
+	\drillBitLabel{5}{64}{inch}{1.98mm}    %
+	\drillBitLabel{3}{32}{inch}{2.38mm}    %
+	\drillBitLabel{7}{64}{inch}{2.78mm}    %
+	\drillBitLabel{1}{8}{inch}{3.18mm}     %
+	\drillBitLabel{9}{64}{inch}{3.57mm}    %
+	\drillBitLabel{5}{32}{inch}{3.97mm}    %
+	\drillBitLabel{11}{64}{inch}{4.37mm}   %
+	\drillBitLabel{3}{16}{inch}{4.76mm}    %
+	\drillBitLabel{13}{64}{inch}{5.16mm}   %
+	\drillBitLabel{7}{32}{inch}{5.56mm}    %
+	\drillBitLabel{15}{64}{inch}{5.95mm}   %
+	\drillBitLabel{1}{4}{inch}{6.35mm}     %
+	\drillBitLabel{5}{16}{inch}{7.94mm}    %
+	\drillBitLabel{3}{8}{inch}{9.52mm}     %
+	\drillBitLabel{7}{16}{inch}{11.11mm}   %
+	\drillBitLabel{1}{2}{inch}{12.70mm}    %
 \end{document}
